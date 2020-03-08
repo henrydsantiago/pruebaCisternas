@@ -57,15 +57,7 @@ boton5.addEventListener('click', function(){
     textOut.value = imprimir
 }, false)
 
-var txt = "¿¡ñÑ\""
-var txtOut = ""
-for (let i = 0; i < txt.length; i++) {
-    txtOut += txt.charCodeAt(i) + ' '
-}
 
-
-
-console.log(txtOut)
 
 /* Aquí se filtran que los caracteres pertenezcan al español. Incluyendo 
 algunos caracteres especiales como (. , '' "" <> + / - * y letras acentuadas). 
@@ -93,6 +85,9 @@ function spanishOnly(textIn) {
     }
     return spanish
 }
+/////////////////////////////////////////////////////////////////////////////
+
+
 
 /* Funciones del paso 1:
     La 1era es convertMinusculas, coloca el texto en minúsculas y luego devuelve
@@ -138,7 +133,6 @@ function chainNumerator(flatText) {
     }
     return arrayChainNumerated.trim()
 }
-/* textOut.value = chainNumerator(spanish)  *///Lineas de texto numeradas
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -165,9 +159,6 @@ function palabraFrecuencia(arrayText){
     }
     return textContador.trim()
 }
-
-/* BOTON PASO 3
-var frecuencia = palabraFrecuencia(arrayContador(spanish)) */
 ////////////////////////////////////////////////////////////////
 
 
@@ -185,15 +176,6 @@ function lexicOrder(arrayText) {
     }
     return textContador.sort((a, b) => a.localeCompare(b));
 }
-
-/* BOTON PASO 4
-var imprimir = ""
-frecuencia = ""
-frecuencia = lexicOrder(palabraFrecuencia(arrayContador(spanish)))
-frecuencia.forEach(element => {
-    imprimir += element + '\n'
-}); */
-
 /////////////////////////////////////////////////////////////////////////////////
 
 
@@ -215,124 +197,8 @@ function numberOrder(arrayText) {
     
     return arrayText
 }
-
-/* BOTON PASO 5
-imprimir = ""
-frecuencia = numberOrder(spanish)
-frecuencia.forEach(element => {
-    imprimir += element + '\n'
-}); */
-/*     textPunto3.value = imprimir */
-    
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////
 
 
 
 
-
-
-
-
-// numLines = (textIn.match(/\n/g, '\\$&')).length;
-/* const contador = arraySpanishWords.reduce((contNombre,nombre) => {
-    contNombre[nombre] = (contNombre[nombre] || 0) + 1
-    return contNombre
-}, {})
-
-var textoContador = ""
-for (const i in contador) {
-    textoContador += (`${i} = ${contador[i]} \n`);
-  }
-
-console.log(contador)
-
-textPunto3.value = textoContador */
-
-/* 
-console.log("\nspanish: " + spanish.length)
-console.log(spanish)
-
-console.log("\n Numero de líneas: " + numLines) */
-
-
-/* ||
-        (textIn.charCodeAt(i) >= 160 && textIn.charCodeAt(i) <= 165) ||
-        textIn.charCodeAt(i) == 129 || textIn.charCodeAt(i) == 130   ||
-        textIn.charCodeAt(i) == 181 || textIn.charCodeAt(i) == 144   ||
-        textIn.charCodeAt(i) == 214 || textIn.charCodeAt(i) == 129   ||
-        textIn.charCodeAt(i) == 224 || textIn.charCodeAt(i) == 233   ||
-        textIn.charCodeAt(i) == 168 || textIn.charCodeAt(i) == 154   ||
-        textIn.charCodeAt(i) >= 173 || textIn.charCodeAt(i) <= 175    */
-
-
-/* DESDE AQUÍ EL PROGRAMA FUNCIONA BIEN, FALTA INCLUIR LOS ACENTOS Y OTRAS COSAS DE ESPAÑOL */
-
-/* var textIn = document.getElementById("STDIN").value
-var textOut = document.getElementById("STDOUT")
-var textPunto3 = document.getElementById("punto3")
-var spanish = ""
-var numLines = 0
-
-textIn = textIn.trim()
-
-for (let i = 0; i < textIn.length; i++) {
-    if((textIn.charCodeAt(i) >= 32) && (textIn.charCodeAt(i) <= 126)){
-        spanish+=textIn[i]
-    }
-
-    if(textIn[i] === ('\n')){
-        numLines+=1
-        spanish+=('\n')
-    }
-}
-
-var arraySpanishWords = []
-var arrayChain = []
-var arrayChainNumerated = []
-
-arraySpanishWords = (spanish.toLowerCase()).split(' ')
-arrayChain = (spanish).split('\n')
-
-
-for (let i = 0; i < arrayChain.length; i++) {
-    if (arrayChain[i] == "") {
-        arrayChainNumerated += '\n' + (i+1) + '.-'
-    }else{
-        arrayChainNumerated += '\n' + (i+1).toString() + '.-' + arrayChain[i]
-    }
-}
-
-var paraContar = ""
-var minuscula = spanish.toLowerCase()
-for (let i = 0; i < minuscula.length; i++) {
-    if (minuscula[i] != '\n' && minuscula[i] != ',' && minuscula[i] != '.' && minuscula[i] != ':' && minuscula[i] != '"' ) {
-        paraContar +=  minuscula[i]
-    }else{
-        paraContar += ' '
-    }
-}
-
-paraContar = paraContar.split(' ')
-
-const contador = paraContar.reduce((contNombre,nombre) => {
-    contNombre[nombre] = (contNombre[nombre] || 0) + 1
-    return contNombre
-}, {})
-
-var textoContador = ""
-for (const i in contador) {
-    textoContador += (`${i} ${contador[i]} \n`);
-  }
-
-textOut.value = arrayChainNumerated.trim() //Lineas de texto numeradas
-console.log(contador)
-textPunto3.value = textoContador */
